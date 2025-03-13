@@ -16,8 +16,25 @@ document.addEventListener('DOMContentLoaded', function() {
             const sheetName = workbook.SheetNames[0];
             const sheet = workbook.Sheets[sheetName];
             
-            // Convert to HTML table
-            const htmlTable = XLSX.utils.sheet_to_html(sheet);
+            // Convert to JSON first to verify all rows are being read
+            const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+            console.log('Excel data rows:', jsonData.length, jsonData);
+            
+            // Create HTML table manually to ensure all rows are included
+            let htmlTable = '<table>';
+            
+            // Add each row to the table
+            jsonData.forEach((row, rowIndex) => {
+                htmlTable += '<tr>';
+                row.forEach((cell) => {
+                    // Use th for header row, td for data rows
+                    const cellTag = rowIndex === 0 ? 'th' : 'td';
+                    htmlTable += `<${cellTag}>${cell}</${cellTag}>`;
+                });
+                htmlTable += '</tr>';
+            });
+            
+            htmlTable += '</table>';
             
             // Display in the container
             document.getElementById('excel-data').innerHTML = htmlTable;
