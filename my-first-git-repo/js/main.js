@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Add a test message to confirm JS is working
+    document.getElementById('excel-data').innerHTML = '<p>JavaScript is loading. Attempting to read Excel file...</p>';
+    
     // Function to fetch and process the Excel file
     async function loadExcelData() {
         try {
