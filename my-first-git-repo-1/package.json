@@ -1,0 +1,21 @@
+{
+  "name": "my-first-git-repo",
+  "version": "1.0.0",
+  "description": "A simple project to demonstrate a basic web application with a database.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "keywords": [],
+  "author": "Your Name",
+  "license": "ISC"
+}
