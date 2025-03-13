@@ -1,2 +1,3 @@
 Hello, GitHub!
 Hello, GitHub! Version 2
+Hello, GitHub! This is a new feature.
